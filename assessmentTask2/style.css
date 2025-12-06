@@ -1,0 +1,900 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+:root {
+  --main-text-color: hwb(0 100% 0%);
+  --main-Bg-color: #0a3e1c;
+  --secondary-Bg-color: rgb(155, 164, 154);
+  --box-shadow: rgb(16, 15, 15);
+  --btn-color: #f97316;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.navIcon {
+  display: none;
+}
+header,
+footer {
+  width: 100%;
+  background-color: var(--main-Bg-color);
+  color: var(--main-text-color);
+}
+/*----active----*/
+nav ul li a.active,
+.subNav ul li a.active {
+  font-weight: 700;
+  border-bottom: 3px solid #f97316;
+}
+
+header {
+  background-color: var(--main-Bg-color);
+  padding: 16px 34px;
+  font-size: 1.1rem;
+  font-family: Arial, sans-serif;
+}
+header li a {
+  color: var(--main-text-color);
+}
+li a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 55px;
+}
+
+.nav ul,
+.subNav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav ul li a {
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 20px;
+  padding: 8px 12px;
+  border: 0.5px solid var(--main-text-color);
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.nav ul li a:hover {
+  background-color: var(--btn-color);
+}
+
+/* BOTTOM NAV */
+.header-bottom {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  border-top: 1px solid var(--shade-color);
+}
+.subNav ul {
+  gap: 50px;
+}
+.subNav ul li a {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: 0.2s;
+}
+
+.subNav ul li a:hover {
+  color: var(--btn-color);
+}
+
+/* === hero section======== */
+.sectionTop {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: url("imgs/pexels-olympus-17754258.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-img img {
+  margin-right: 20px;
+}
+.sectionTop:hover .hero-img {
+  filter: brightness(0.7) contrast(1.15);
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--main-text-color);
+  max-width: 800px;
+  padding: 0 20px;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+
+.text-overlay h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin: 0 0 1.2rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 12px var(--shade-color);
+}
+
+.text-overlay p {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  margin: 0 0 2.5rem;
+  line-height: 1.6;
+  font-weight: 400;
+  text-shadow: 0 2px 8px var(--shade-color);
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 14px 32px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-btn.primary {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: var(--main-text-color);
+  box-shadow: 0 8px 24px var(--shade-color);
+}
+
+.hero-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px var(--shade-color);
+}
+
+.hero-btn.secondary {
+  border: 0.5px solid var(--main-text-color);
+  color: var(--main-text-color);
+}
+
+.hero-btn.secondary:hover {
+  background: var(--main-Bg-color);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px var(--shade-color);
+}
+
+.hero-btn {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+}
+
+/* === section bottom ====== */
+
+.sectionBottom {
+  margin-top: 60px;
+  padding-bottom: 60px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 5px 10px var(--box-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px var(--box-shadow);
+}
+
+.card img {
+  max-width: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.card-body {
+  padding: 18px 18px 20px;
+  text-align: left;
+}
+
+.card h4 {
+  font-size: 1.1rem;
+  color: var(--main-Bg-color);
+  margin-left: 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.card p {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--main-text-color);
+}
+
+.card button {
+  padding: 10px 20px;
+  background: var(--main-Bg-color);
+  color: var(--main-text-color);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.12);
+}
+
+.card button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+}
+
+/* Discount badge */
+.discount-badge {
+  position: absolute;
+  top: 2px;
+  right: 1px;
+  background-color: rgb(191, 17, 17);
+  color: var(--main-text-color);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 6px 16px var(--shade-color);
+}
+
+/* news letter section */
+.newsletter {
+  background-color: var(--secondary-Bg-color);
+  padding: 40px 5vw 50px;
+}
+
+.newsletter-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.newsletter h2 {
+  font-size: 2.3rem;
+  margin-bottom: 8px;
+}
+
+.newsletter p {
+  font-size: 1rem;
+  color: var(--box-shadow);
+  margin-bottom: 22px;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 720px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 16px 18px;
+  border: 1px solid var(--main-text-color);
+  border-right: none;
+  border-radius: 999px 0 0 999px;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  padding: 0 36px;
+  border: none;
+  border-radius: 0 999px 999px 0;
+  background-color: var(--btn-color);
+  color: var(--main-text-color);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.newsletter-form button:hover {
+  filter: brightness(1.05);
+}
+
+/* footer */
+footer {
+  background-color: var(--main-Bg-color);
+  padding: 20px 40px;
+}
+/* footer top */
+.footerTop {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 26px;
+}
+.footer-links a,
+.footer-contact p,
+.footer-bottom p {
+  color: var(--main-text-color);
+  opacity: 0.7;
+}
+
+.footer-col h4 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+}
+
+.footer-brand img {
+  max-width: 140px;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  margin: 20px 0;
+}
+
+.footer-links a,
+.footer-contact p {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.footer-links a:hover {
+  color: var(--btn-color);
+}
+
+.soMedia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.soMedia img {
+  width: 26px;
+}
+
+.soMedia img:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+/* footer-bottom */
+.footer-bottom {
+  border-top: 1px solid var(--shade-color);
+  margin-top: 22px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* bikes page */
+
+.bike-hire,
+.bike-card-grid,
+.bike-servicing {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px var(--secondary-Bg-color);
+}
+/* bike hire table and notes */
+.bike-hire h2 {
+  color: var(--box-shadow);
+}
+.bike-hire table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 22px;
+}
+.bike-hire th,
+.bike-hire td {
+  padding: 9px 14px;
+  font-size: 1.06rem;
+  border: 1px solid var(--main-text-color);
+  text-align: left;
+}
+.bike-hire th {
+  color: var(--main-text-color);
+  background-color: color-mix(in srgb, var(--main-Bg-color), transparent 20%);
+}
+
+.hire-notes {
+  margin-top: 12px;
+  padding-left: 16px;
+}
+.hire-notes li {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: var(--box-shadow);
+}
+/* bikes cards */
+.bike-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  background-color: var(--secondary-Bg-color);
+}
+
+.bike-card {
+  background-color: color-mix(in srgb, var(--main-Bg-color), transparent 20%);
+  color: var(--main-text-color);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bike-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px var(--box-shadow);
+}
+
+.bike-card-img {
+  position: relative;
+  max-height: 300px;
+  overflow: hidden;
+  padding: 15px;
+  border-radius: 2px;
+}
+
+.bike-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.bike-card:hover .bike-card-img img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+.bike-card-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.bike-card-body h3 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+}
+
+.bike-prices {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--secondary-text-color);
+}
+
+.bike-prices li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  font-size: 0.95rem;
+}
+
+.bike-prices li + li {
+  border-top: 1px dashed var(--secondary-text-color);
+}
+
+.bike-prices span:last-child {
+  font-weight: 700;
+}
+
+/* bikes servicing */
+.servicing-features {
+  display: flex;
+  justify-content: space-evenly;
+}
+.bike-servicing h2,
+.bike-hire h2 {
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+.servicing-features {
+  margin-bottom: 30px;
+  padding-left: 16px;
+}
+.servicing-features li {
+  font-size: 1.08rem;
+  margin-bottom: 4px;
+  color: var(--secondary-Bg-color);
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  background-color: color-mix(in srgb, var(--main-Bg-color), transparent 20%);
+  color: var(--main-text-color);
+  border-radius: 10px;
+  box-shadow: 0 1px 6px var(--box-shadow);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s;
+}
+
+.service-card:hover {
+  box-shadow: 0 3px 16px var(--box-shadow);
+}
+
+.service-card h3 {
+  margin: 0 0 14px 0;
+  font-size: 1.2rem;
+  color: var(--main-text-color);
+}
+.price {
+  color: var(--shade-color);
+  font-weight: 600;
+  margin-left: 7px;
+}
+
+.service-card ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.service-card ul li {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* ------our shope  and special offers------*/
+.shop-container {
+  max-width: 1400px;
+  margin: 40px auto;
+  background-color: var(--main-text-color);
+  box-shadow: 0 4px 18px var(--shade-color);
+  border-radius: 14px;
+  padding: 5px 20px;
+}
+.shop-info {
+  height: 200px;
+}
+.shop-info h1 {
+  color: var(--secondary-Bg-color);
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+.shop-info p {
+  font-size: 1.1rem;
+  margin-bottom: 26px;
+  color: var(--shade-color);
+}
+
+.shop-details h2 {
+  font-size: 1.27rem;
+  color: var(--secondary-Bg-color);
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+address {
+  font-style: normal;
+  background-color: var(--main-Bg-color);
+  color: var(--main-text-color);
+  padding: 10px 13px;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  font-size: 1.09rem;
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 18px;
+}
+.hours-table td {
+  padding: 7px 15px;
+  border-bottom: 1px solid var(--main-text-color);
+  font-size: 1.08rem;
+  background-color: color-mix(in srgb, var(--main-Bg-color), transparent 20%);
+  color: var(--main-text-color);
+}
+.hours-table tr:last-child td {
+  border-bottom: none;
+}
+
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 12px;
+  font-size: 1.08rem;
+}
+.contact-list li {
+  margin-bottom: 5px;
+}
+.contact-list a {
+  color: var(--secondary-Bg-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.18s;
+}
+.contact-list a:hover {
+  color: var(--secondary-text-color);
+}
+/*----- special offers--*/
+.specialOffers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  width: 100%;
+}
+
+.specialOffers article {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: var(--main-text-color);
+  color: var(--box-shadow);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.specialOffers article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.25);
+}
+
+.bikeTiBr {
+  display: flex;
+}
+
+.bike-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.bike-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--secondary-text-color);
+  margin: 0 0 0 auto;
+}
+
+.bike-description {
+  color: #4b5563;
+  margin-top: 10px;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.specialOffers h2 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: var(--secondary-text-color);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.btn_Img {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 0;
+}
+
+.articleImg img {
+  width: 100%;
+  max-height: 150px; /* same height for all */
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+.btn_Img button {
+  padding: 7px 15px;
+  background: #f97316;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* ---------contact us page-------------- */
+.contact-container {
+  max-width: 1400px;
+  margin: 98px auto;
+  box-shadow: 0 2px 12px var(--shade-color);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 32px 22px;
+  background-color: color-mix(in srgb, var(--main-Bg-color), transparent 20%);
+  color: var(--main-text-color);
+  flex: 1;
+}
+
+.contact-info {
+  flex: 1 1 250px;
+  min-width: 250px;
+  max-width: 350px;
+}
+
+.contact-info h1,
+form h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--main-text-color);
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.07rem;
+}
+
+.contact-info li {
+  margin-bottom: 7px;
+}
+
+.contact-info a {
+  color: var(--secondary-Bg-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+.contact-info a:hover {
+}
+
+.hours h2 {
+  margin-top: 15px;
+  color: var(--main-text-color);
+  font-size: 1.5rem;
+}
+
+.hours ul {
+  margin: 0;
+}
+
+.contact-form-section {
+  min-width: 290px;
+}
+
+.contact-form-section h2 {
+  font-size: 1.36rem;
+  margin-bottom: 12px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form label {
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 9px 11px;
+  border: 1px solid var(--main-text-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: var(--main-text-color);
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 8px;
+  padding: 9px 25px;
+  font-size: 1.07rem;
+  border: none;
+  background-color: var(--secondary-text-color);
+  color: var(--main-text-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.19s;
+}
+.contact-form button:hover {
+  background-color: var(--secondary-Bg-color);
+}
+
+/* === hero section======== */
+
+.text-overlay {
+  top: 35%;
+  width: 100%;
+  padding: 0 30px;
+}
+.text-overlay h1 {
+  font-size: clamp(1.4rem, 5vw, 3.5rem);
+}
+
+.text-overlay p {
+  font-size: clamp(1.1rem, 3vw, 1.25rem);
+  opacity: 0.9;
+}
+
+.hero-btn {
+  padding: 9px 19px;
+  font-size: 0.95rem;
+}
+
+.sectionBottom {
+  margin: 30px 0;
+  padding-bottom: 0px;
+}
+
+/*  news letter section */
+.newsletter {
+  padding: 50px;
+}
+
+.newsletter-inner {
+  margin: 0 auto;
+}
+
+.newsletter h2 {
+  font-size: 1.5rem;
+}
+
+.newsletter-form button {
+  padding: 17px 20px;
+}
