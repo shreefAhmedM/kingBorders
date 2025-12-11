@@ -4,11 +4,11 @@
   list-style: none;
 }
 :root {
-  --main-text-color: hwb(0 100% 0%);
+  --main-text-color: #fff;
   --main-Bg-color: #0a3e1c;
   --secondary-Bg-color: rgb(155, 164, 154);
   --box-shadow: rgb(16, 15, 15);
-  --btn-color: #f97316;
+  --btn-color: #6d2f03;
 }
 body {
   margin: 0;
@@ -29,7 +29,7 @@ footer {
 nav ul li a.active,
 .subNav ul li a.active {
   font-weight: 700;
-  border-bottom: 3px solid #f97316;
+  border-bottom: 3px solid var(--btn-color);
 }
 
 header {
@@ -185,26 +185,17 @@ li a {
   backdrop-filter: blur(10px);
 }
 
-.hero-btn.primary {
-  background: linear-gradient(135deg, #f97316, #ea580c);
+.hero-btn.primary,
+.hero-btn.secondary {
+  background: linear-gradient(135deg, #ff6c28, #6d2f03);
   color: var(--main-text-color);
   box-shadow: 0 8px 24px var(--shade-color);
 }
 
-.hero-btn.primary:hover {
-  transform: translateY(-2px);
+hero-buttons :hover {
   box-shadow: 0 12px 32px var(--shade-color);
-}
-
-.hero-btn.secondary {
-  border: 0.5px solid var(--main-text-color);
-  color: var(--main-text-color);
-}
-
-.hero-btn.secondary:hover {
   background: var(--main-Bg-color);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px var(--shade-color);
 }
 
 .hero-btn {
@@ -234,6 +225,7 @@ li a {
   position: relative;
   box-shadow: 0 5px 10px var(--box-shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: center;
 }
 
 .card:hover {
@@ -243,28 +235,20 @@ li a {
 
 .card img {
   max-width: 300px;
+  max-height: 250px;
   object-fit: cover;
   border-radius: 5px;
   margin-bottom: 10px;
 }
 
 .card-body {
-  padding: 18px 18px 20px;
-  text-align: left;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
-.card h4 {
+.card p {
   font-size: 1.1rem;
   color: var(--main-Bg-color);
-  margin-left: 10px;
-  padding-top: 30px;
-  padding-bottom: 20px;
-}
-.card p {
-  margin: 0 0 16px;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--main-text-color);
 }
 
 .card button {
@@ -341,7 +325,7 @@ li a {
   background-color: var(--btn-color);
   color: var(--main-text-color);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
   white-space: nowrap;
 }
@@ -549,14 +533,11 @@ footer {
   font-size: 2rem;
   margin-bottom: 18px;
 }
-.servicing-features {
-  margin-bottom: 30px;
-  padding-left: 16px;
-}
+
 .servicing-features li {
   font-size: 1.08rem;
   margin-bottom: 4px;
-  color: var(--secondary-Bg-color);
+  color: var(--box-shadow);
 }
 
 .service-cards {
@@ -613,7 +594,7 @@ footer {
   height: 200px;
 }
 .shop-info h1 {
-  color: var(--secondary-Bg-color);
+  color: var(--box-shadow);
   font-size: 2.2rem;
   margin-bottom: 12px;
 }
@@ -625,7 +606,7 @@ footer {
 
 .shop-details h2 {
   font-size: 1.27rem;
-  color: var(--secondary-Bg-color);
+  color: var(--box-shadow);
   margin-top: 32px;
   margin-bottom: 8px;
 }
@@ -747,7 +728,7 @@ address {
 }
 .btn_Img button {
   padding: 7px 15px;
-  background: #f97316;
+  background-color: var(--main-Bg-color);
   color: #fff;
   border: none;
   border-radius: 8px;
