@@ -54,9 +54,11 @@ li a {
 .logo {
   height: fit-content;
   padding: 0;
+  border-bottom: 2px solid #fff;
+
 }
 .logo img {
-  height: 55px;
+  height: 70px;
 }
 
 .nav ul,
@@ -526,6 +528,15 @@ footer {
 .servicing-features {
   display: flex;
   justify-content: space-evenly;
+}
+.bike-servicing p{
+  background-color: color-mix(in srgb, var(--main-Bg-color), transparent 20%);
+  color: var(--main-text-color);
+  border-radius: 10px;
+  box-shadow: 0 1px 6px var(--box-shadow);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  line-height: 20px;
 }
 .bike-servicing h2,
 .bike-hire h2 {
