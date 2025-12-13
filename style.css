@@ -6,13 +6,15 @@
 :root {
   --main-text-color: #fff;
   --main-Bg-color: #0a3e1c;
-  --secondary-Bg-color: rgb(155, 164, 154);
   --box-shadow: rgb(16, 15, 15);
+  --secondary-Bg-color:rgb(125, 144, 125);
   --btn-color: #6d2f03;
+}
+html {
+  font-family:"Montserrat", system-ui, "Segoe UI", sans-serif;
 }
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -54,7 +56,7 @@ li a {
 .logo {
   height: fit-content;
   padding: 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--main-text-color);
 
 }
 .logo img {
@@ -88,7 +90,6 @@ li a {
   display: flex;
   justify-content: center;
   padding-top: 8px;
-  border-top: 1px solid var(--shade-color);
 }
 .subNav ul {
   gap: 50px;
@@ -110,22 +111,21 @@ li a {
   height: 70vh;
   min-height: 500px;
   overflow: hidden;
+  background-image: url("imgs/pexels-olympus-17754258.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.hero-img {
+.sectionTop img {
   width: 100%;
   height: 100%;
-  display: block;
-  background-image: url("imgs/pexels-olympus-17754258.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  object-fit: cover;
 }
 
-.hero-img img {
+.sectionTop img {
   margin-right: 20px;
 }
-.sectionTop:hover .hero-img {
+.sectionTop:hover .sectionTop{
   filter: brightness(0.7) contrast(1.15);
 }
 
@@ -155,7 +155,7 @@ li a {
   margin: 0 0 1.2rem;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  text-shadow: 0 4px 12px var(--shade-color);
+  text-shadow: 0 4px 12px var(--box-shadow);
 }
 
 .text-overlay p {
@@ -163,13 +163,14 @@ li a {
   margin: 0 0 2.5rem;
   line-height: 1.6;
   font-weight: 400;
-  text-shadow: 0 2px 8px var(--shade-color);
+  text-shadow: 0 2px 8px var(--box-shadow);
 }
 
 /* Buttons */
 .hero-buttons {
   display: flex;
   justify-content: center;
+
   gap: 1.5rem;
   flex-wrap: wrap;
 }
@@ -191,11 +192,11 @@ li a {
 .hero-btn.secondary {
   background: linear-gradient(135deg, #ff6c28, #6d2f03);
   color: var(--main-text-color);
-  box-shadow: 0 8px 24px var(--shade-color);
+  box-shadow: 0 8px 24px var(--box-shadow);
 }
 
 hero-buttons :hover {
-  box-shadow: 0 12px 32px var(--shade-color);
+  box-shadow: 0 12px 32px var(--box-shadow);
   background: var(--main-Bg-color);
   transform: translateY(-2px);
 }
@@ -281,7 +282,7 @@ hero-buttons :hover {
   padding: 6px 12px;
   font-size: 0.8rem;
   font-weight: 700;
-  box-shadow: 0 6px 16px var(--shade-color);
+  box-shadow: 0 6px 16px var(--box-shadow);
 }
 
 /* news letter section */
@@ -399,7 +400,7 @@ footer {
 }
 /* footer-bottom */
 .footer-bottom {
-  border-top: 1px solid var(--shade-color);
+  border-top: 0.1px solid var(--main-text-color);
   margin-top: 22px;
   padding-top: 10px;
   text-align: center;
@@ -577,7 +578,7 @@ footer {
   color: var(--main-text-color);
 }
 .price {
-  color: var(--shade-color);
+  color: var(--box-shadow);
   font-weight: 600;
   margin-left: 7px;
 }
@@ -597,7 +598,7 @@ footer {
   max-width: 1400px;
   margin: 40px auto;
   background-color: var(--main-text-color);
-  box-shadow: 0 4px 18px var(--shade-color);
+  box-shadow: 0 4px 18px var(--box-shadow);
   border-radius: 14px;
   padding: 5px 20px;
 }
@@ -612,7 +613,7 @@ footer {
 .shop-info p {
   font-size: 1.1rem;
   margin-bottom: 26px;
-  color: var(--shade-color);
+  color: var(--box-shadow);
 }
 
 .shop-details h2 {
@@ -732,7 +733,7 @@ address {
 
 .articleImg img {
   width: 100%;
-  max-height: 150px; /* same height for all */
+  max-height: 150px;
   border-radius: 12px;
   object-fit: cover;
   transition: transform 0.2s ease;
@@ -752,7 +753,7 @@ address {
 .contact-container {
   max-width: 1400px;
   margin: 98px auto;
-  box-shadow: 0 2px 12px var(--shade-color);
+  box-shadow: 0 2px 12px var(--box-shadow);
   border-radius: 12px;
   display: flex;
   justify-content: space-evenly;
@@ -791,8 +792,6 @@ form h2 {
   color: var(--secondary-Bg-color);
   text-decoration: none;
   font-weight: 500;
-}
-.contact-info a:hover {
 }
 
 .hours h2 {
@@ -851,45 +850,168 @@ form h2 {
   background-color: var(--secondary-Bg-color);
 }
 
-/* === hero section======== */
 
-.text-overlay {
-  top: 35%;
-  width: 100%;
-  padding: 0 30px;
-}
-.text-overlay h1 {
-  font-size: clamp(1.4rem, 5vw, 3.5rem);
-}
 
-.text-overlay p {
-  font-size: clamp(1.1rem, 3vw, 1.25rem);
-  opacity: 0.9;
-}
+   /* TABLET — max-width: 768px */
+  
+@media (max-width: 768px) {
 
-.hero-btn {
-  padding: 9px 19px;
-  font-size: 0.95rem;
-}
+  /* Header & Navigation */
+  .header-top {
+    flex-direction: column;
+    gap: 12px;
+  }
 
-.sectionBottom {
-  margin: 30px 0;
-  padding-bottom: 0px;
-}
+  .nav ul {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-/*  news letter section */
-.newsletter {
-  padding: 50px;
-}
+  .subNav ul {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
 
-.newsletter-inner {
-  margin: 0 auto;
+  /* Hero Section */
+  .sectionTop {
+  position: relative;
+  background-image: url("imgs/small.webp");
+  background-size: cover;
+  background-position: center;
 }
 
-.newsletter h2 {
-  font-size: 1.5rem;
+.sectionTop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.7)
+  );
 }
 
-.newsletter-form button {
-  padding: 17px 20px;
+  .text-overlay {
+    padding: 0 20px;
+    top: 40%;
+    color: var(--main-text-color);
+  
+  }
+
+  /* Cards */
+  .cards {
+    gap: 30px;
+    height: fit-content;
+  }
+
+  .card {
+    width: 90%;
+    height: 500px;
+  }
+  .card img {
+    max-width: 100%;
+    max-height: 400px;
+   
+  }
+  /* Footer */
+  .footerTop {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  /* Bike Cards */
+  .bike-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  /* Contact Page */
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+}
+
+
+
+   /* MOBILE — max-width: 480px */
+ 
+@media (max-width: 480px) {
+
+  /* Header */
+  header {
+    padding: 12px 20px;
+  }
+
+  .logo img {
+    height: 55px;
+  }
+
+  .nav ul li a {
+    font-size: 15px;
+    padding: 6px 10px;
+    margin-left: 0;
+  }
+
+  /* Hero */
+
+.sectionTop > .text-overlay {
+  position: relative; /* stay above ::before */
+}
+
+
+
+  /* Cards */
+  .cards {
+    gap: 60px;
+    height: fit-content;
+  }
+
+  .card {
+    width: 90%;
+    height: 500px;
+  }
+  .card img {
+    width: 100%;
+    max-height: 500px;
+  }
+
+  /* Newsletter */
+  .newsletter {
+    padding: 30px 15px;
+  }
+
+  .newsletter h2 {
+    font-size: 1.2rem;
+  }
+
+  /* Shop Section */
+  .shop-container {
+    padding: 10px;
+  }
+
+  .shop-info h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Special Offers */
+  .specialOffers {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact Page */
+  .contact-container {
+    padding: 20px 15px;
+  }
+
+  .contact-info h1,
+  .contact-form-section h2 {
+    font-size: 1.5rem;
+  }
 }
