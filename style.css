@@ -839,7 +839,7 @@ form h2 {
   padding: 9px 25px;
   font-size: 1.07rem;
   border: none;
-  background-color: var(--secondary-text-color);
+  background-color: var(--btn-color);
   color: var(--main-text-color);
   border-radius: 6px;
   cursor: pointer;
