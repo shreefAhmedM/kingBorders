@@ -877,6 +877,7 @@ form h2 {
 
 @media (max-width: 768px) {
   /* Header & Navigation */
+  
   .header-top {
     flex-direction: column;
     gap: 12px;
